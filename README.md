@@ -8,14 +8,14 @@ To run the game, you will need to have Python 3 installed on your system. You ca
 
 You will also need to install the requests library to fetch data from the Open Trivia Database API. You can do this by running the following command:
 
-[pip install requests]
+`pip install requests`
 
 
 ## Usage
 
 To start the game, simply run the following command in your terminal:
 
-[main.py]
+`main.py`
 
 
 This will launch the game window. From here, you can select a category and difficulty level, and then start playing the game. The game will fetch questions from the API and present them to you one by one. You can select your answer from the multiple choice options, and then click the "Next" button to move on to the next question.
