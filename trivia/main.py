@@ -1,4 +1,5 @@
 import requests
+import html
 import tkinter as tk
 from tkinter import ttk
 
@@ -16,7 +17,8 @@ score = 0
 # start the game
 def start_game():
     global in_list_question_number
-    question.config(text=trivia_response.json()['results'][in_list_question_number]['question'])
+    q_text = html.unescape(trivia_response.json()['results'][in_list_question_number]['question'])
+    question.config(text=q_text)
 
 
 def next_question_true():
@@ -29,7 +31,8 @@ def next_question_true():
         in_list_question_number += 1
         question_number += 1
         score += 1
-        question.config(text=trivia_response.json()['results'][in_list_question_number]['question'])
+        q_text = html.unescape(trivia_response.json()['results'][in_list_question_number]['question'])
+        question.config(text=q_text)
         score_board.config(text=f"Score: {score}")
     else:
         question.config(text="Your answer was incorrect!!", fg="red")
@@ -47,7 +50,8 @@ def next_question_false():
         in_list_question_number += 1
         question_number += 1
         score += 1
-        question.config(text=trivia_response.json()['results'][in_list_question_number]['question'])
+        q_text = html.unescape(trivia_response.json()['results'][in_list_question_number]['question'])
+        question.config(text=q_text)
         score_board.config(text=f"Score: {score}")
     else:
         question.config(text="Your answer was incorrect!!", fg="red")
